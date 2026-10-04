@@ -57,7 +57,8 @@ Worked example:
 
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
-| <Eva>  |          |              |             |           |
+| <Eva>  |          |              |             |  57addae
+          |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
