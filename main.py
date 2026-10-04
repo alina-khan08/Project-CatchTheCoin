@@ -4,6 +4,8 @@
 from Milestone 1 onward. Replace the placeholder below with your own core loop.
 """
 def move_coin(game_state):
+    if game_state["player"] == game_state["coin"]:
+        move_player()
     return game_state
 
 def main():
