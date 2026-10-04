@@ -5,6 +5,10 @@ from Milestone 1 onward. Replace the placeholder below with your own core loop.
 """
 def move_coin(game_state):
     if game_state["player"] == game_state["coin"]:
+        game_state["score"] += 1
+        next_index = (game_state.get("coin_index", 0) + 1) % len(game_state["coin_positions"])
+        game_state["coin_index"] = next_index
+        game_state["coin"] = game_state["coin_positions"][next_index]
         move_player()
     return game_state
 
