@@ -11,7 +11,7 @@ networked, multi-user theme - see the "Suggested projects" section of
 | Full name | GitHub username |
 |-----------|-----------------|
 | Alina    | @alina-khan08     |
-| <name>    | @<username>     |
+| Eva Bebee-Jacques    | @evabebeejacques-design    |
 | <name>    | @<username>     |
 | <name>    | @<username>     |
 
