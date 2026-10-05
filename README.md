@@ -10,7 +10,7 @@ Catch The Coin is our video game where the player moves across the screen, dodge
 |-----------|-----------------|
 | Alina    | @alina-khan08     |
 | Eva Bebee-Jacques    | @evabebeejacques-design    |
-| <name>    | @<username>     |
+| Rida     | @<username>     |
 | <name>    | @<username>     |
 
 Note:  Be sure to [add all of the group members to as collaborators on this repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/repository-access-and-collaboration/inviting-collaborators-to-a-personal-repository).
@@ -27,6 +27,7 @@ python main.py
 ```
 # move_coin() checks to see if the player and coin collide with each other, if they do it gets added to the score and the coin moves to another position
 # reset_game() resets the player's coins to 0, and the player + enemy move back to their starting positions and speed.
+# draw_game() clears the screen and updates its display
 ## Design
 
 <Leave this until Milestone 3. Then add, in about a page: how the pieces fit together
