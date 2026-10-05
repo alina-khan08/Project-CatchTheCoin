@@ -25,7 +25,6 @@ in - the rest of this file is one row per member, per milestone, against their s
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
-| <name>  | <feature>                    |
 
 <!-- Teams of four: delete the fifth row, here and in the tables below. -->
 
@@ -58,7 +57,7 @@ Worked example:
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
 | Eva     | 4cf741c  | 5e2b699      | 05a2c12     |  57addae  |
-| <name>  |          |              |             |           |
+| Alina   | 90edb6f  | 31ca02c      | 7c8f9ea     |  90ea371  |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
