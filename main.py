@@ -96,7 +96,22 @@ def reset_game(start_x, start_y, start_enemy_speed):
     # reset's enemy's speed to starting speed we choose
     if enemy["speed"] != start_enemy_speed:
         enemy["speed"] = start_enemy_speed
-        
+
+def draw_game():
+    # clears the screen
+    screen.fill((255, 255, 255))
+    
+    # draws player
+    pygame.draw.rect(screen, (0, 102, 204), (player["x"], player["y"], PLAYER_SIZE, PLAYER_SIZE))
+    # draws coin
+    pygame.draw.rect(screen, (255, 215, 0), (coin["x"], coin["y"], COIN_SIZE, COIN_SIZE))
+    # draws enemy
+    pygame.draw.rect(screen, (220, 20, 60), (enemy["x"], enemy["y"], ENEMY_SIZE, ENEMY_SIZE))
+
+    # updates display on screen
+    pygame.display.flip()
+
+
 
 def main():
     print("CSCI 1030U group project - not built yet.")
