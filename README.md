@@ -27,7 +27,7 @@ Note:  Be sure to [add all of the group members to as collaborators on this repo
 ```
 python main.py
 ```
-
+# move_coin() checks to see if the player and coin collide with each other, if they do it gets added to the score and the coin moves to another position
 ## Design
 
 <Leave this until Milestone 3. Then add, in about a page: how the pieces fit together
