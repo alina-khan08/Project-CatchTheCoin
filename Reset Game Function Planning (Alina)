@@ -1,10 +1,8 @@
-# this function checks when the game has ended and resets the variables to their starting position.
-# uses a reset_game function, if statements check when game ends, and dictionary stores the player + enemy's state.
+# this function resets the game by returning variables to their starting position and speed.
+# uses a reset_game function, if statement checks if enemy's speed changes, and lists store the player + enemy's state.
 
 # Steps: 
-# 1. Check if enemy caught player.
-# 2. End the round.
-# 3. Reset the player's x and y position.
+# 1. Reset the player's x and y position. (add parameters so the start coordinate can be chosen)
 # 4. Reset player's score to 0. 
-# 5. Reset enemy position
-# 6. Start game again at initial state.
+# 5. Reset enemy position (account for size so it doesn't overlap screen)
+# 6. Enemy may or may not change speed throughout game, so if it changed reset to starting speed (add parameter for this as well)
