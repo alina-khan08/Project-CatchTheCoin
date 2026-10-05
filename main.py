@@ -84,6 +84,15 @@ def move_coin(game_state):
 >>>>>>> 281f17b422a79d38625291e0ed51cdb9ad5535c2
 
 def reset_game(start_x, start_y, start_enemy_speed):
+    # resets player position to whatever starting coordinates we give
+    player["x"] = start_x
+    player["y"] = start_y
+    # resets score to zero
+    player["score"] = 0
+
+    # moves enemy to the right side of the screen.
+    enemy["x"] = WIDTH - ENEMY_SIZE
+
 
 def main():
     print("CSCI 1030U group project - not built yet.")
