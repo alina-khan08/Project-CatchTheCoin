@@ -83,6 +83,8 @@ def move_coin(game_state):
     return game_state
 >>>>>>> 281f17b422a79d38625291e0ed51cdb9ad5535c2
 
+def reset_game(start_x, start_y, start_enemy_speed):
+
 def main():
     print("CSCI 1030U group project - not built yet.")
     print("Replace main() with your core loop. See MILESTONES.md for what is due when.")
