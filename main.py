@@ -93,6 +93,10 @@ def reset_game(start_x, start_y, start_enemy_speed):
     # moves enemy to the right side of the screen.
     enemy["x"] = WIDTH - ENEMY_SIZE
 
+    # reset's enemy's speed to starting speed we choose
+    if enemy["speed"] != start_enemy_speed:
+        enemy["speed"] = start_enemy_speed
+        
 
 def main():
     print("CSCI 1030U group project - not built yet.")
