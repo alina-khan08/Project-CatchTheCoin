@@ -74,9 +74,9 @@ def check_collisons():
 
 =======
 def move_coin(game_state):
-    check_collisions()
+    # checks to see is player and coin collide with eachother
     if game_state["player"] == game_state["coin"]:
-        
+        #Adds the coin to game score and moves coin
         game_state["score"] += 1
         next_index = (game_state.get("coin_index", 0) + 1) % len(game_state["coin_positions"])
         game_state["coin_index"] = next_index
@@ -117,8 +117,10 @@ def draw_game():
 
 
 def main():
-    print("CSCI 1030U group project - not built yet.")
-    print("Replace main() with your core loop. See MILESTONES.md for what is due when.")
+    draw_game()
+    move_player()
+    move_enemy()
+    
 
 
 if __name__ == '__main__':
