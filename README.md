@@ -2,9 +2,7 @@
 
 ## The application
 
-<Two or three sentences: what are you building, and who plays or uses it? It has to fit the
-networked, multi-user theme - see the "Suggested projects" section of
-[`MILESTONES.md`](MILESTONES.md). Name one of the suggestions, or describe your own idea.>
+Catch The Coin is our video game where the player moves across the screen, dodges obstacles, and collects as many coins as possible.. without being caught by the COIN SNATCHER! This is the AI enemy who acts as an obstacle - if it catches you then you lose your coins and the game restarts. Compete with another player and/or try to beat your high score!!
 
 ## The team
 
@@ -28,6 +26,7 @@ Note:  Be sure to [add all of the group members to as collaborators on this repo
 python main.py
 ```
 # move_coin() checks to see if the player and coin collide with each other, if they do it gets added to the score and the coin moves to another position
+# reset_game() resets the player's coins to 0, and the player + enemy move back to their starting positions and speed.
 ## Design
 
 <Leave this until Milestone 3. Then add, in about a page: how the pieces fit together
