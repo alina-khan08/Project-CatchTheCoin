@@ -74,12 +74,15 @@ def check_collisons():
 
 =======
 def move_coin(game_state):
+    check_collisions()
     if game_state["player"] == game_state["coin"]:
+        
         game_state["score"] += 1
         next_index = (game_state.get("coin_index", 0) + 1) % len(game_state["coin_positions"])
         game_state["coin_index"] = next_index
         game_state["coin"] = game_state["coin_positions"][next_index]
         move_player()
+        
     return game_state
 >>>>>>> 281f17b422a79d38625291e0ed51cdb9ad5535c2
 
