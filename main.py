@@ -7,12 +7,42 @@ from Milestone 1 onward. Replace the placeholder below with your own core loop.
 import pygame
 import random
 
+#Setting up constants
 WIDTH = 800
 HEIGHT = 600
-
 PLAYER_SIZE = 30
 COIN_SIZE = 20
 ENEMY_SIZE = 30
+
+#Setting up colours
+WHITE = (255, 255, 255)
+BLUE = (0, 102, 204)
+GOLD = (255, 215, 0)
+RED = (220, 20, 60)
+
+#Setting up the screen and clock
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Milestone Game")
+clock = pygame.time.Clock()
+
+#Game objects
+player = {
+    "x": 100,
+    "y": 100,
+    "speed": 5,
+    "score": 0
+}
+
+enemy = {
+    "x": WIDTH - ENEMY_SIZE - 50,
+    "y": HEIGHT - ENEMY_SIZE - 50,
+    "speed": 2
+}
+
+coin = {
+    "x": random.randint(0, WIDTH - COIN_SIZE),
+    "y": random.randint(0, HEIGHT - COIN_SIZE)
+}
 
 def move_player():
     keys = pygame.key.get_pressed()
@@ -117,11 +147,33 @@ def draw_game():
 
 
 def main():
-    draw_game()
-    move_player()
-    move_enemy()
-    
+    running = True
 
+    while running:
+        # 1. Handle events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+
+        # 2. Update game state
+        move_player()
+        move_enemy()
+        check_coin_collision()
+
+        if check_enemy_collision():
+            reset_game()
+
+        # 3. Draw frame
+        draw_game()
+
+        # Cap frame rate at 60 FPS
+        clock.tick(60)
+
+    pygame.quit()
+
+
+if __name__ == '__main__':
+    main()
 
 if __name__ == '__main__':
     main()
