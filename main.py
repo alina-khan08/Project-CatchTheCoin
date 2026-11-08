@@ -351,6 +351,10 @@ def main():
     parser.add_argument("--difficulty", type=int, default=1, choices=[1, 2, 3, 4, 5])
     args = parser.parse_args()
 
+    # Calculates the bonus score using the recursive function
+    point_multiplier = calculate_bonus(args.difficulty)
+    enemy["speed"] = ENEMY_SPEED + (args.difficulty - 1) * 2
+
    
     # Create game window
 
@@ -375,7 +379,7 @@ def main():
 
     instructions = tk.Label(
         root,
-        text=f"Difficulty: Level {args.difficulty} (+{point_multiplier} pts/coin) | Use the arrow keys to collect coins and avoid the enemy!",
+        text=f"Difficulty: Level {args.difficulty} (+{point_multiplier} pts/coin) |Use the arrow keys to collect coins and avoid the enemy!",
         font=("Arial", 12)
     )
 
