@@ -1,4 +1,6 @@
-
+import argparse
+import json
+import os
 import tkinter as tk 
 import random
 
@@ -19,6 +21,26 @@ ENEMY_SPEED = 5
 
 BACKGROUND_COLOR = "white"
 
+#Object oriented programming for high score
+class HighScoreTracker:
+    #Reads and writes the highscore onto the disk
+    def __init__(self, filename="highscore.json"):
+        self.filename = filename
+
+    def load(self):
+        #Reads the highscore from JSON
+        if os.path.exists(self.filename):
+            try:
+                with open(self.filename, "r") as f:
+                    return json.load(f).get("high_score", 0)
+            except (json.JSONDecodeError, IOError):
+                return 0
+        return 0
+
+    def save(self, score):
+        #Write the high score to JSON
+        with open(self.filename, "w") as f:
+            json.dump({"high_score": score}, f, indent=4)
 
 # -----------------------------
 # GAME OBJECT DICTIONARIES
@@ -52,7 +74,17 @@ canvas = None
 
 game_over = False
 
+#Global tracker for highscores and bonus calculations
+tracker = HighScoreTracker()
+high_score = tracker.load()
+point_multiplier = 1
 
+
+def calculate_bonus(level):
+    #Recursive calculations for score bonus based on how difficult the level is
+    if level <= 1:
+        return 1
+    return level + calculate_bonus(level - 1)
 # -----------------------------
 # MOVE PLAYER
 # -----------------------------
@@ -136,7 +168,7 @@ def move_enemy():
 
 def check_collisions():
 
-    global game_over
+    global game_over, high_score
 
     # Check if player touches coin
 
@@ -152,6 +184,11 @@ def check_collisions():
         player["score"] += 1
 
         # Generate another coin
+
+        # Save high score to file using the Object oriented programming tracker if the record is broken
+        if player["score"] > high_score:
+            high_score = player["score"]
+            tracker.save(high_score)
 
         move_coin()
 
@@ -209,11 +246,19 @@ def draw_game():
     # Display score
 
     canvas.create_text(
-        60,
+        70,
         20,
         text="Score: " + str(player["score"]),
         fill="black",
-        font=("Arial", 16, "bold")
+        font=("Arial", 14, "bold")
+    )
+
+    canvas.create_text(
+    WIDTH - 90,
+    20,
+    text="High Score: " + str(high_score),
+    fill="black",
+    font=("Arial", 14, "bold")
     )
 
     # Display game over message
@@ -301,7 +346,16 @@ def game_loop():
 
 def main():
 
-    global root, canvas
+    global root, canvas, point_multiplier
+
+    #Command-line arguements
+    parser = argparse.ArgumentParser(description="Catch the Coin")
+    parser.add_argument("--difficulty", type=int, default=1, choices=[1, 2, 3, 4, 5])
+    args = parser.parse_args()
+
+    #Calculates bonus score using recursion
+    point_multiplier = calculate_bonus(args.difficulty)
+    enemy["speed"] = ENEMY_SPEED + (args.difficulty - 1) * 2
 
     # Create game window
 
@@ -326,7 +380,7 @@ def main():
 
     instructions = tk.Label(
         root,
-        text="Use the arrow keys to collect coins and avoid the enemy!",
+        text=f"Difficulty: Level {args.difficulty} (+{point_multiplier} pts/coin) | Use the arrow keys to collect coins and avoid the enemy!",
         font=("Arial", 12)
     )
 
