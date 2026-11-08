@@ -21,7 +21,7 @@ ENEMY_SPEED = 5
 
 BACKGROUND_COLOR = "white"
 
-#Object oriented programming for high score
+# Object oriented programming for high score
 class HighScoreTracker:
     #Reads and writes the highscore onto the disk
     def __init__(self, filename="highscore.json"):
@@ -80,11 +80,7 @@ high_score = tracker.load()
 point_multiplier = 1
 
 
-def calculate_bonus(level):
-    #Recursive calculations for score bonus based on how difficult the level is
-    if level <= 1:
-        return 1
-    return level + calculate_bonus(level - 1)
+
 # -----------------------------
 # MOVE PLAYER
 # -----------------------------
@@ -185,10 +181,7 @@ def check_collisions():
 
         # Generate another coin
 
-        # Save high score to file using the Object oriented programming tracker if the record is broken
-        if player["score"] > high_score:
-            high_score = player["score"]
-            tracker.save(high_score)
+
 
         move_coin()
 
@@ -346,16 +339,7 @@ def game_loop():
 
 def main():
 
-    global root, canvas, point_multiplier
-
-    #Command-line arguements
-    parser = argparse.ArgumentParser(description="Catch the Coin")
-    parser.add_argument("--difficulty", type=int, default=1, choices=[1, 2, 3, 4, 5])
-    args = parser.parse_args()
-
-    #Calculates bonus score using recursion
-    point_multiplier = calculate_bonus(args.difficulty)
-    enemy["speed"] = ENEMY_SPEED + (args.difficulty - 1) * 2
+    global root, 
 
     # Create game window
 
