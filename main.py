@@ -344,8 +344,14 @@ def game_loop():
 
 def main():
 
-    global root, 
+    global root, canvas, point_multiplier
 
+    # Command-line arguments
+    parser = argparse.ArgumentParser(description="Catch the Coin")
+    parser.add_argument("--difficulty", type=int, default=1, choices=[1, 2, 3, 4, 5])
+    args = parser.parse_args()
+
+   
     # Create game window
 
     root = tk.Tk()
