@@ -192,7 +192,7 @@ def check_collisions():
         # Save high score to file using the object oriented programming tracker if the record is broken
         if player["score"] > high_score:
             high_score = player["score"]
-            tracker.save(high_sco
+            tracker.save(high_score)
 
         # Generate another coin
 
