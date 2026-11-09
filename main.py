@@ -353,16 +353,17 @@ def game_loop():
 
 def main():
 
-    global root, canvas, point_multiplier
+    global root, canvas, point_multiplier, selected_difficulty
 
     # Command-line arguments
     parser = argparse.ArgumentParser(description="Catch the Coin")
     parser.add_argument("--difficulty", type=int, default=1, choices=[1, 2, 3, 4, 5])
     args = parser.parse_args()
+    selected_difficulty = args.difficulty
 
     # Calculates the bonus score using the recursive function
-    point_multiplier = calculate_bonus(args.difficulty)
-    enemy["speed"] = ENEMY_SPEED + (args.difficulty - 1) * 2
+    point_multiplier = calculate_bonus(selected_difficulty)
+    enemy["speed"] = ENEMY_SPEED + (selected_difficulty - 1) * 2
 
    
     # Create game window
