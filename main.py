@@ -87,6 +87,7 @@ game_over = False
 tracker = HighScoreTracker()
 high_score = tracker.load()
 point_multiplier = 1
+selected_difficulty = 1
 
 
 
@@ -303,11 +304,10 @@ def reset_game():
     player["y"] = 50
     player["score"] = 0
 
-    # Reset enemy
-
+    # Reset enemy (re-applying selected difficulty speed boost)
     enemy["x"] = WIDTH - ENEMY_SIZE
     enemy["y"] = HEIGHT - ENEMY_SIZE
-    enemy["speed"] = ENEMY_SPEED
+    enemy["speed"] = ENEMY_SPEED + (selected_difficulty - 1) * 2
 
     # Reset coin
 
@@ -389,7 +389,7 @@ def main():
 
     instructions = tk.Label(
         root,
-        text=f"Difficulty: Level {args.difficulty} (+{point_multiplier} pts/coin) |Use the arrow keys to collect coins and avoid the enemy!",
+        text=f"Difficulty: Level {selected_difficulty} (+{point_multiplier} pts/coin) |Use the arrow keys to collect coins and avoid the enemy!",
         font=("Arial", 12)
     )
 
