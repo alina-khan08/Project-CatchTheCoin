@@ -42,6 +42,15 @@ class HighScoreTracker:
         with open(self.filename, "w") as f:
             json.dump({"high_score": score}, f, indent=4)
 
+############
+# RECURSION
+############
+def calculate_bonus(difficulty):
+  #Recursively calculates score multiplier based on difficulty level (1 to 5)
+  if difficulty <= 1:
+    return 1
+  return 2 + calculate_bonus(difficulty - 1)
+
 # -----------------------------
 # GAME OBJECT DICTIONARIES
 # -----------------------------
