@@ -69,7 +69,7 @@ Worked example:
 | Student | OOP | File I/O | Recursion | Command-line args | Interface (TUI/GUI) |
 |---------|-----|----------|-----------|-------------------|---------------------|
 | Eva     |9f13479|9f13479 |ec02493    |f99d344            |77e3d57              |
-| Rida    |     |          |b7f88ad    |5e70fea            |                     |
+| Rida    |9f13479|9f13479 |b7f88ad    |5e70fea            |c470eb1              |
 | <name>  |     |          |           |                   |                     |
 | <name>  |     |          |           |                   |                     |
 | <name>  |     |          |           |                   |                     |
