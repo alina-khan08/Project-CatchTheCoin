@@ -21,7 +21,7 @@ in - the rest of this file is one row per member, per milestone, against their s
 
 | Student | Slice (the feature they own) |
 |---------|------------------------------|
-| <name>  | <feature>                    |
+| Smriti  | Graphics & Movement                  |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
 | <name>  | <feature>                    |
@@ -57,7 +57,7 @@ Worked example:
 | Student | Planning | Control flow | Collections | Functions |
 |---------|----------|--------------|-------------|-----------|
 | Eva     | 4cf741c  | 5e2b699      | 05a2c12     |  57addae  |
-| Alina   | 9ae865d  | 31ca02c      | 7c8f9ea     |  90ea371  |
+| Smriti   |   |       |      |    |
 | Rida    | 552b35f  | 552b35f      | 552b35f     |  552b35f  |
 | <name>  |          |              |             |           |
 | <name>  |          |              |             |           |
@@ -70,7 +70,7 @@ Worked example:
 |---------|-----|----------|-----------|-------------------|---------------------|
 | Eva     |9f13479|9f13479 |ec02493    |f99d344            |77e3d57              |
 | Rida    |9f13479|9f13479 |b7f88ad    |5e70fea            |c470eb1              |
-| <name>  |     |          |           |                   |                     |
+| Smriti |9f13479| 9f13479  |           |                   |                     |
 | <name>  |     |          |           |                   |                     |
 | <name>  |     |          |           |                   |                     |
 
